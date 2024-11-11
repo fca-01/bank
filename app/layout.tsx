@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Ubuntu from "next/font/google";
 import "./globals.css";
 
-
+const urbanist = localFont({
+  src: "./fonts/Urbanist-VariableFont_wght.ttf",
+  variable: "--font-urbanist",
+  weight: "100 900",
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,8 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} antialiased`} style={{'fontFamily': 'var(--font-urbanist)'}}>
         {children}
       </body>
     </html>
