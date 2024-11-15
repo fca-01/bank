@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 
 
@@ -25,10 +26,10 @@ export default function MobileNav({ user }: MobileNavProps) {
           <Image src="/icons/hamburger.svg" width={30} height={30} alt="menu" />
         </SheetTrigger>
         <SheetContent className="bg-white">
-          <Link href={'/'} className="cursor-pointer items-center gap-2">
-          {/*  <Image src={} width={34} height={34} alt=""></Image> */}
-          <h1 className="text-sky-500 font-extrabold text-3xl">Bank</h1>
-          {/* <h1 className="sidebar-logo">Bank</h1> */}
+          <Link href={'/'} className="cursor-pointer items-center gap-2 flex">
+           <Image src={'/icons/logo.svg'} width={34} height={34} alt="'/icons/logo.svg" />
+ {          <h1 className="text-26 font-bold text-black-1">Bank</h1>}
+
           </Link>
 
           <div className="mobilenav-sheet">
@@ -47,6 +48,7 @@ export default function MobileNav({ user }: MobileNavProps) {
                 })}
               </nav>
             </SheetClose>
+            <Footer user={user}></Footer>
           </div>
           
         </SheetContent>
